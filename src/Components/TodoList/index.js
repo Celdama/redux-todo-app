@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import TodoItem from '../TodoItem';
+import AddTodoForm from '../AddTodoForm';
 import { todosSelector } from '../../Store/selectors/todosSelector';
 import {
+  addTodoAction,
   deleteTodoAction,
   toggleTodoAction,
 } from '../../Store/actions/todosActions';
@@ -42,11 +44,21 @@ export const TodoListStore = () => {
     [dispatch]
   );
 
+  const addTodo = useCallback(
+    (title) => {
+      dispatch(addTodoAction(title));
+    },
+    [dispatch]
+  );
+
   return (
-    <TodoList
-      todos={todos}
-      onToggle={onToggle}
-      handleDeleteTodo={handleDeleteTodo}
-    />
+    <>
+      <TodoList
+        todos={todos}
+        onToggle={onToggle}
+        handleDeleteTodo={handleDeleteTodo}
+      />
+      <AddTodoForm addTodo={addTodo} />
+    </>
   );
 };
