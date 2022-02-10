@@ -1,12 +1,14 @@
 import { TodoListStore } from './Components/TodoList';
-import './App.css';
+import { Container } from './app.style.tw';
+import { GlobalStyle } from './GlobalStyle';
 
 function App() {
   return (
-    <div className='App'>
+    <Container className='App'>
       <h1 className='text-3xl font-bold underline'>Todo List with Redux</h1>
       <TodoListStore />
-    </div>
+      <GlobalStyle />
+    </Container>
   );
 }
 
