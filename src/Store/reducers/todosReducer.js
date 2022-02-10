@@ -37,10 +37,20 @@ export const todosReducer = (state = initialState, action) => {
       });
     case DELETE_TODO_ACTION:
       return state.filter((todo) => todo.id !== action.payload.id);
+
+    // case EDIT_TODO_ACTION:
+    //   console.log(action.payload);
+    //   return state.map((todo) => {
+    //     if (todo.id === action.payload.id) {
+    //       return { ...todo, ...action.payload };
+    //     }
+    //     return todo;
+    //   });
     case EDIT_TODO_ACTION:
+      console.log(action.payload);
       return state.map((todo) => {
         if (todo.id === action.payload.id) {
-          return { ...todo, ...action.payload };
+          return { ...todo, title: action.payload.updatedTitle };
         }
         return todo;
       });
