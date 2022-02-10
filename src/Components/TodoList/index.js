@@ -17,7 +17,7 @@ export const TodoList = ({
   handleEditTodo,
 }) => {
   return (
-    <ul>
+    <ul className='w-full'>
       {todos.map((todo) => {
         return (
           <TodoItem
@@ -66,7 +66,7 @@ export const TodoListStore = () => {
   );
 
   return (
-    <>
+    <div className='w-96'>
       <TodoList
         todos={todos}
         onToggle={onToggle}
@@ -74,6 +74,6 @@ export const TodoListStore = () => {
         handleEditTodo={handleEditTodo}
       />
       <AddTodoForm addTodo={addTodo} />
-    </>
+    </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { DeleteBtn, EditBtn, SaveBtn } from './todoItem.tw';
 const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -29,26 +30,48 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const { completed, title } = todo;
 
   return (
-    <li>
-      <input
-        type='checkbox'
-        checked={completed}
-        onChange={() => onToggle(todo)}
-      />
-      {editing ? (
-        <form onSubmit={(e) => saveNewTodo(todo, e)}>
-          <input type='text' value={newTitle} onChange={handleNewTodoTitle} />
-        </form>
-      ) : (
-        <label htmlFor=''>{title}</label>
-      )}
-      <button onClick={() => handleDeleteTodo(todo)}>x</button>
-      {editing ? (
-        // <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
-        <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
-      ) : (
-        <button onClick={() => editTodo(todo)}>edit</button>
-      )}
+    <li className='flex w-full justify-between px-4 sm:px-6 py-3'>
+      <div className='flex items-center'>
+        <input
+          className='mr-3'
+          type='checkbox'
+          checked={completed}
+          disabled={editing}
+          onChange={() => onToggle(todo)}
+        />
+        {editing ? (
+          <form className='block' onSubmit={(e) => saveNewTodo(todo, e)}>
+            <input
+              className='text-black pr-12 pl-7 w-96'
+              type='text'
+              value={newTitle}
+              onChange={handleNewTodoTitle}
+            />
+          </form>
+        ) : (
+          <label
+            className={
+              completed
+                ? 'line-through italic pr-12 pl-7 w-96'
+                : 'pr-12 pl-7 w-96'
+            }
+            htmlFor=''
+          >
+            {title}
+          </label>
+        )}
+      </div>
+      <div className='flex'>
+        {editing ? (
+          // <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
+          <SaveBtn onClick={(e) => saveNewTodo(todo, e)}>save</SaveBtn>
+        ) : (
+          <EditBtn disabled={completed} onClick={() => editTodo(todo)}>
+            edit
+          </EditBtn>
+        )}
+        <DeleteBtn onClick={() => handleDeleteTodo(todo)}>x</DeleteBtn>
+      </div>
     </li>
   );
 };

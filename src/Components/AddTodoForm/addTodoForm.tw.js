@@ -2,13 +2,15 @@ import tw from 'tailwind-styled-components';
 
 export const Form = tw.form`
   flex
-  gap-5
+  mt-16
+  justify-around
 `;
 
 export const Input = tw.input`
   rounded-md
   sm:text-sm
   pr-12
+  text-black
   pl-7
 `;
 
