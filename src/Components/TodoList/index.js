@@ -6,10 +6,16 @@ import { todosSelector } from '../../Store/selectors/todosSelector';
 import {
   addTodoAction,
   deleteTodoAction,
+  editTodoAction,
   toggleTodoAction,
 } from '../../Store/actions/todosActions';
 
-export const TodoList = ({ todos, onToggle, handleDeleteTodo }) => {
+export const TodoList = ({
+  todos,
+  onToggle,
+  handleDeleteTodo,
+  handleEditTodo,
+}) => {
   return (
     <ul>
       {todos.map((todo) => {
@@ -19,6 +25,7 @@ export const TodoList = ({ todos, onToggle, handleDeleteTodo }) => {
             onToggle={onToggle}
             handleDeleteTodo={handleDeleteTodo}
             key={todo.id}
+            handleEditTodo={handleEditTodo}
           />
         );
       })}
@@ -51,12 +58,20 @@ export const TodoListStore = () => {
     [dispatch]
   );
 
+  const handleEditTodo = useCallback(
+    (todo, newTitle) => {
+      dispatch(editTodoAction(todo, newTitle));
+    },
+    [dispatch]
+  );
+
   return (
     <>
       <TodoList
         todos={todos}
         onToggle={onToggle}
         handleDeleteTodo={handleDeleteTodo}
+        handleEditTodo={handleEditTodo}
       />
       <AddTodoForm addTodo={addTodo} />
     </>

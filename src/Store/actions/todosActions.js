@@ -2,6 +2,7 @@ import {
   ADD_TODO_ACTION,
   UPDATE_TODO_ACTION,
   DELETE_TODO_ACTION,
+  EDIT_TODO_ACTION,
 } from '../reducers/todosReducer';
 
 export const addTodoAction = (title) => ({
@@ -17,4 +18,9 @@ export const toggleTodoAction = (todo) => ({
 export const deleteTodoAction = (todo) => ({
   type: DELETE_TODO_ACTION,
   payload: todo,
+});
+
+export const editTodoAction = (todo, newTitle) => ({
+  type: EDIT_TODO_ACTION,
+  payload: { ...todo, title: newTitle },
 });
