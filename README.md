@@ -49,3 +49,10 @@ src
 │ ├──
 │ └──
 └── components
+
+# ADD NEW ACTIONS STEP
+
+I. create action in reducer
+II. create action in actions files
+III. call action in component store with useDispatch()
+IV. use action in component children

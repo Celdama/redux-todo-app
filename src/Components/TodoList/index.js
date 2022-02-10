@@ -2,13 +2,23 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import TodoItem from '../TodoItem';
 import { todosSelector } from '../../Store/selectors/todosSelector';
-import { toggleTodoAction } from '../../Store/actions/todosActions';
+import {
+  deleteTodoAction,
+  toggleTodoAction,
+} from '../../Store/actions/todosActions';
 
-export const TodoList = ({ todos, onToggle }) => {
+export const TodoList = ({ todos, onToggle, handleDeleteTodo }) => {
   return (
     <ul>
       {todos.map((todo) => {
-        return <TodoItem todo={todo} onToggle={onToggle} key={todo.id} />;
+        return (
+          <TodoItem
+            todo={todo}
+            onToggle={onToggle}
+            handleDeleteTodo={handleDeleteTodo}
+            key={todo.id}
+          />
+        );
       })}
     </ul>
   );
@@ -25,5 +35,18 @@ export const TodoListStore = () => {
     [dispatch]
   );
 
-  return <TodoList todos={todos} onToggle={onToggle} />;
+  const handleDeleteTodo = useCallback(
+    (todo) => {
+      dispatch(deleteTodoAction(todo));
+    },
+    [dispatch]
+  );
+
+  return (
+    <TodoList
+      todos={todos}
+      onToggle={onToggle}
+      handleDeleteTodo={handleDeleteTodo}
+    />
+  );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoItem = ({ todo, onToggle }) => {
+const TodoItem = ({ todo, onToggle, handleDeleteTodo }) => {
   return (
     <li>
       <input
@@ -9,6 +9,7 @@ const TodoItem = ({ todo, onToggle }) => {
         onChange={() => onToggle(todo)}
       />
       <label htmlFor=''>{todo.title}</label>
+      <button onClick={() => handleDeleteTodo(todo)}>x</button>
     </li>
   );
 };
