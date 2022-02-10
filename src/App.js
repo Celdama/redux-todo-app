@@ -1,11 +1,13 @@
 import { TodoListStore } from './Components/TodoList';
-import { Container } from './app.style.tw';
 import { GlobalStyle } from './GlobalStyle';
+import { Container } from './app.style.tw';
 
 function App() {
   return (
     <Container className='App'>
-      <h1 className='text-3xl font-bold underline'>Todo List with Redux</h1>
+      <h1 className='font-semibold text-4xl text-slate-300'>
+        Todo List with Redux
+      </h1>
       <TodoListStore />
       <GlobalStyle />
     </Container>

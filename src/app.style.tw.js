@@ -1,10 +1,15 @@
 import tw from 'tailwind-styled-components';
+import styled from 'styled-components';
 
-export const Container = tw.div`
+const ContainerWithCustomCss = styled.div`
+  background-color: #1e293b;
+`;
+
+export const Container = tw(ContainerWithCustomCss)`
   flex
   items-center
   justify-center
   flex-col
   w-full
-  bg-indigo-300
+  text-white
 `;
