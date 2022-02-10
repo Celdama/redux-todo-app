@@ -18,7 +18,3 @@ export const TodoListStore = () => {
 
   return <TodoList todos={todos} />;
 };
-
-// export const TodoListStore = connect((state) => ({
-//   todos: todosSelector(state),
-// }))(TodoList);

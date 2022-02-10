@@ -19,11 +19,19 @@ const initialState = [
 ];
 
 export const ADD_TODO_ACTION = 'ADD_TODO_ACTION';
+export const UPDATE_TODO_ACTION = 'UPDATE_TODO_ACTION';
 
 export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO_ACTION:
       return [...state, { id: nanoid(), completed: false, ...action.payload }];
+    case UPDATE_TODO_ACTION:
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, ...action.payload };
+        }
+        return todo;
+      });
     default:
       return state;
   }
