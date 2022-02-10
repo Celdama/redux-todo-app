@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import TodoItem from '../TodoItem';
 import { todosSelector } from '../../Store/selectors/todosSelector';
-import { connect } from 'react-redux';
 
 export const TodoList = ({ todos }) => {
   return (
-    <div>
-      <TodoItem />
-    </div>
+    <ul>
+      {todos.map((todo) => {
+        return <TodoItem todo={todo} key={todo.id} />;
+      })}
+    </ul>
   );
 };
 
