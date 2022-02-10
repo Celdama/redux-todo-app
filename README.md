@@ -7,6 +7,11 @@ Build a simple todo app using Redux
 - [] update todo
 - [] filter todo
 
+## Components
+
+- TodoList
+- TodoItem
+
 I. create a reducer
 II. create a redux store
 III. wrap the main component with Provider (=> react-redux)
@@ -36,5 +41,3 @@ src
 │ ├──
 │ └──
 └── components
-
-<!--  -->
