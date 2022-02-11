@@ -1,13 +1,14 @@
 import tw from 'tailwind-styled-components';
 
 export const Container = tw.div`
-  md:container
-  md:mx-auto
+  container
+  px-6
+  sm:px-2
 `;
 
 export const ListItem = tw.ul`
   w-full
-  md:mx-auto 
+  mx-auto 
   lg:w-10/12
   container 
   pl-2 

@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 
-import { DeleteBtn, EditBtn, SaveBtn } from './todoItem.tw';
+import {
+  TaskItem,
+  ItemContainer,
+  EditTaskInput,
+  Checkbox,
+  DeleteBtn,
+  EditBtn,
+  SaveBtn,
+} from './todoItem.tw';
 const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -30,10 +38,9 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const { completed, title } = todo;
 
   return (
-    <li className='flex w-full justify-between px-4 sm:px-6 py-3'>
-      <div className='flex items-center  w-full'>
-        <input
-          className='mr-3'
+    <TaskItem>
+      <ItemContainer>
+        <Checkbox
           type='checkbox'
           checked={completed}
           disabled={editing}
@@ -41,8 +48,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         />
         {editing ? (
           <form className='block' onSubmit={(e) => saveNewTodo(todo, e)}>
-            <input
-              className='text-black pr-12 pl-7 w-full'
+            <EditTaskInput
               type='text'
               value={newTitle}
               onChange={handleNewTodoTitle}
@@ -58,7 +64,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
             {title}
           </label>
         )}
-      </div>
+      </ItemContainer>
       <div className='flex'>
         {editing ? (
           // <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
@@ -70,7 +76,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         )}
         <DeleteBtn onClick={() => handleDeleteTodo(todo)}>x</DeleteBtn>
       </div>
-    </li>
+    </TaskItem>
   );
 };
 
