@@ -7,11 +7,18 @@ import { Button } from './todoFilter.tw';
 export const TodoFilter = ({ filter, handleSetFilter }) => {
   return (
     <div>
-      <Button disabled={filter === true} onClick={() => handleSetFilter(true)}>
+      <Button disabled={filter === null} onClick={() => handleSetFilter(null)}>
         no filter
       </Button>
-      <Button>todo</Button>
-      <Button>done</Button>
+      <Button
+        disabled={filter === false}
+        onClick={() => handleSetFilter(false)}
+      >
+        todo
+      </Button>
+      <Button disabled={filter === true} onClick={() => handleSetFilter(true)}>
+        done
+      </Button>
     </div>
   );
 };

@@ -10,6 +10,6 @@ export const filteredTodosSelector = createSelector(
     if (filter === null) {
       return todos;
     }
-    return todos.filter((todo) => todo.completed === filter);
+    return todos.filter(({ completed }) => completed === filter);
   }
 );

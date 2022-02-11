@@ -61,3 +61,6 @@ IV. use action in component children
 
 I. create reducer with inital state null
 II. import filter reducer in store/index.js and combine it with todosReducer using combineReducer() method
+III. create filterSelector to get initial value of filter from filter reducer to component TodoFilter
+IV. create filterAction to display right value of filter (null, true or false) in filterReducer
+V. get all logic filter in TodoFilter component
