@@ -11,6 +11,12 @@ export const Container = tw(ContainerWithCustomCss)`
   flex
   flex-col
   items-center
-  h-screen
-  w-screen
+  min-h-full 
+  h-full 
+  pt-14
+  pb-28
+`;
+
+export const TitleApp = tw.h1`
+  font-semibold text-4xl text-slate-300 mb-16
 `;

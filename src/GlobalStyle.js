@@ -4,11 +4,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    background-color: #1e293b;  
   }
 
 
   #root {
-    background-color: #1e293b;  
     display: flex;
     justify-content: center;
   }

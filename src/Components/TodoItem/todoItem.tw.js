@@ -73,10 +73,12 @@ export const BtnItem = tw.button`
   rounded-md
   border-transparent
   border
+  w-16
 `;
 
 export const DeleteBtn = tw(BtnItem)`
   bg-red-600
+  w-10
 `;
 
 export const EditBtn = tw(BtnItem)`

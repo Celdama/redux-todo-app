@@ -49,7 +49,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
           onChange={() => onToggle(todo)}
         />
         {editing ? (
-          <form className='block' onSubmit={(e) => saveNewTodo(todo, e)}>
+          <form onSubmit={(e) => saveNewTodo(todo, e)}>
             <EditTaskInput
               type='text'
               value={newTitle}
