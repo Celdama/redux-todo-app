@@ -46,7 +46,6 @@ export const todosReducer = (state = initialState, action) => {
     //     return todo;
     //   });
     case EDIT_TODO_ACTION:
-      console.log(action.payload);
       return state.map((todo) => {
         if (todo.id === action.payload.id) {
           return { ...todo, title: action.payload.updatedTitle };

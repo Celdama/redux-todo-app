@@ -60,3 +60,4 @@ IV. use action in component children
 ## Create Filter reducer
 
 I. create reducer with inital state null
+II. import filter reducer in store/index.js and combine it with todosReducer using combineReducer() method
