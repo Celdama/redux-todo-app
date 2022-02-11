@@ -5,6 +5,7 @@ import { filterSelector } from '../../Store/selectors/filterSelector';
 import { Button } from './todoFilter.tw';
 
 export const TodoFilter = ({ filter, handleSetFilter }) => {
+  console.log(filter);
   return (
     <div>
       <Button disabled={filter === null} onClick={() => handleSetFilter(null)}>
