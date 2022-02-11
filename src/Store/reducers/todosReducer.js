@@ -26,7 +26,6 @@ export const EDIT_TODO_ACTION = 'EDIT_TODO_ACTION';
 export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO_ACTION:
-      console.log(action.payload);
       return [...state, { id: nanoid(), completed: false, ...action.payload }];
     case UPDATE_TODO_ACTION:
       return state.map((todo) => {
