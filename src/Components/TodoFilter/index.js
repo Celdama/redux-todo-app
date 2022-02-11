@@ -2,13 +2,16 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilterAction } from '../../Store/actions/filterAction';
 import { filterSelector } from '../../Store/selectors/filterSelector';
+import { Button } from './todoFilter.tw';
 
 export const TodoFilter = ({ filter, handleSetFilter }) => {
   return (
     <div>
-      <button disabled={filter === true} onClick={() => handleSetFilter(true)}>
-        completed todo
-      </button>
+      <Button disabled={filter === true} onClick={() => handleSetFilter(true)}>
+        no filter
+      </Button>
+      <Button>todo</Button>
+      <Button>done</Button>
     </div>
   );
 };
