@@ -1,6 +1,7 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-const TodoFilter = () => {
+export const TodoFilter = () => {
   return (
     <div>
       <button>filter</button>
@@ -8,4 +9,6 @@ const TodoFilter = () => {
   );
 };
 
-export default TodoFilter;
+export const TodoFilterStore = () => {
+  return <TodoFilter />;
+};
