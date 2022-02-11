@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { setFilterAction } from '../../Store/actions/filterAction';
+import { filterSelector } from '../../Store/selectors/filterSelector';
 
-export const TodoFilter = () => {
+export const TodoFilter = ({ filter, handleSetFilter }) => {
   return (
     <div>
-      <button>filter</button>
+      <button disabled={filter === true} onClick={() => handleSetFilter(true)}>
+        completed todo
+      </button>
     </div>
   );
 };
 
 export const TodoFilterStore = () => {
-  return <TodoFilter />;
+  const filter = useSelector(filterSelector);
+  const dispatch = useDispatch();
+
+  const handleSetFilter = useCallback(
+    (value) => {
+      dispatch(setFilterAction(value));
+    },
+    [dispatch]
+  );
+
+  return <TodoFilter filter={filter} handleSetFilter={handleSetFilter} />;
 };
