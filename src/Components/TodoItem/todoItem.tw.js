@@ -40,53 +40,49 @@ export const EditTaskInput = tw.input`
   w-auto
   block
   px-5
+  py-2
   text-gray-700
   rounded
   bg-white bg-clip-padding
   transition
   ease-in-out
   m-0
-  caret-blue-600
-  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+  caret-red-500
+  focus:text-gray-700 
+  focus:bg-white 
+  focus:border-blue-600 
+  focus:outline-none
 `;
 
-export const DeleteBtn = tw.button`
+export const LabelItemTitle = tw.label`
+  pr-12
+  py-2
+  pl-7
+`;
+
+export const ContainerBtnItem = tw.div`
+  flex
+  gap-2
+`;
+
+export const BtnItem = tw.button`
+  px-4
+  py-2
+  text-sm
+  font-medium
+  rounded-md
+  border-transparent
+  border
+`;
+
+export const DeleteBtn = tw(BtnItem)`
   bg-red-600
-  px-4
-  py-2
-  text-base
-  font-medium
-  shadow-sm
-  border-transparent
-  border
-  rounded-md
-  text-white
-  hover:bg-red-700
-  focus:outline-none
-  focus:ring-offset-2
-  focus:ring-red-500
-  ml-3
-  sm:w-auto
-  sm:text-sm
 `;
 
-export const EditBtn = tw.button`
-bg-white
-  px-4
-  py-2
-  text-base
-  shadow-sm
-  border-transparent
-  border
-  rounded-md
-  text-blue-500
-  font-medium
-  hover:bg-indigo-50
-  focus:outline-none
-  focus:ring-offset-2
-  sm:ml-3
-  sm:text-sm
-  w-16
+export const EditBtn = tw(BtnItem)`
+bg-blue-400
+  disabled:opacity-75
+  disabled:cursor-auto
 `;
 
 export const SaveBtn = tw(EditBtn)``;

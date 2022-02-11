@@ -5,9 +5,11 @@ import {
   ItemContainer,
   EditTaskInput,
   Checkbox,
+  LabelItemTitle,
   DeleteBtn,
   EditBtn,
   SaveBtn,
+  ContainerBtnItem,
 } from './todoItem.tw';
 const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const [editing, setEditing] = useState(false);
@@ -55,17 +57,15 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
             />
           </form>
         ) : (
-          <label
-            className={
-              completed ? 'line-through italic pr-12 pl-7' : 'pr-12 pl-7 '
-            }
+          <LabelItemTitle
+            className={completed ? 'line-through italic ' : ''}
             htmlFor=''
           >
             {title}
-          </label>
+          </LabelItemTitle>
         )}
       </ItemContainer>
-      <div className='flex'>
+      <ContainerBtnItem>
         {editing ? (
           // <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
           <SaveBtn onClick={(e) => saveNewTodo(todo, e)}>save</SaveBtn>
@@ -75,7 +75,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
           </EditBtn>
         )}
         <DeleteBtn onClick={() => handleDeleteTodo(todo)}>x</DeleteBtn>
-      </div>
+      </ContainerBtnItem>
     </TaskItem>
   );
 };
