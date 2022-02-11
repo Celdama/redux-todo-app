@@ -6,10 +6,11 @@ const ContainerWithCustomCss = styled.div`
 `;
 
 export const Container = tw(ContainerWithCustomCss)`
-  flex
-  items-center
-  justify-center
-  flex-col
-  w-full
+  container
   text-white
+  flex
+  flex-col
+  items-center
+  h-screen
+  w-screen
 `;

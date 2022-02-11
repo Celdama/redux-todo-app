@@ -31,7 +31,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
 
   return (
     <li className='flex w-full justify-between px-4 sm:px-6 py-3'>
-      <div className='flex items-center'>
+      <div className='flex items-center  w-full'>
         <input
           className='mr-3'
           type='checkbox'
@@ -42,7 +42,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         {editing ? (
           <form className='block' onSubmit={(e) => saveNewTodo(todo, e)}>
             <input
-              className='text-black pr-12 pl-7 w-96'
+              className='text-black pr-12 pl-7 w-full'
               type='text'
               value={newTitle}
               onChange={handleNewTodoTitle}
@@ -51,9 +51,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         ) : (
           <label
             className={
-              completed
-                ? 'line-through italic pr-12 pl-7 w-96'
-                : 'pr-12 pl-7 w-96'
+              completed ? 'line-through italic pr-12 pl-7' : 'pr-12 pl-7 '
             }
             htmlFor=''
           >

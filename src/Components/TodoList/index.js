@@ -9,6 +9,7 @@ import {
   editTodoAction,
   toggleTodoAction,
 } from '../../Store/actions/todosActions';
+import { Container, ListItem } from './todoList.tw';
 
 export const TodoList = ({
   todos,
@@ -17,7 +18,7 @@ export const TodoList = ({
   handleEditTodo,
 }) => {
   return (
-    <ul className='w-full'>
+    <ListItem>
       {todos.map((todo) => {
         return (
           <TodoItem
@@ -29,7 +30,7 @@ export const TodoList = ({
           />
         );
       })}
-    </ul>
+    </ListItem>
   );
 };
 
@@ -66,7 +67,7 @@ export const TodoListStore = () => {
   );
 
   return (
-    <div className='w-96'>
+    <Container>
       <TodoList
         todos={todos}
         onToggle={onToggle}
@@ -74,6 +75,6 @@ export const TodoListStore = () => {
         handleEditTodo={handleEditTodo}
       />
       <AddTodoForm addTodo={addTodo} />
-    </div>
+    </Container>
   );
 };

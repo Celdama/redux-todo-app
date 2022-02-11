@@ -6,12 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  .App {
-    outline: 1px solid red;
-    height: 100vh;
-  }
 
   #root {
-    padding: 40px;
+    background-color: #1e293b;  
+    display: flex;
+    justify-content: center;
   }
 `;
