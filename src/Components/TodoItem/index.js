@@ -25,17 +25,16 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
     setNewTitle(e.target.value);
   };
 
-  // const saveNewTodo = (todo, e) => {
-  //   e.preventDefault();
-  //   handleEditTodo({ ...todo, title: newTitle });
-  //   setEditing(false);
-  // };
-
-  const saveNewTodo = (todo, e) => {
-    e.preventDefault();
-    handleEditTodo(todo.id, newTitle);
+  const saveNewTodo = (todo) => {
+    handleEditTodo({ ...todo, title: newTitle });
     setEditing(false);
   };
+
+  // const saveNewTodo = (todo, e) => {
+  //   e.preventDefault();
+  //   handleEditTodo(todo.id, newTitle);
+  //   setEditing(false);
+  // };
 
   const { completed, title } = todo;
 
@@ -67,8 +66,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
       </ItemContainer>
       <ContainerBtnItem>
         {editing ? (
-          // <button onClick={(e) => saveNewTodo(todo, e)}>save</button>
-          <SaveBtn onClick={(e) => saveNewTodo(todo, e)}>save</SaveBtn>
+          <SaveBtn onClick={() => saveNewTodo(todo)}>save</SaveBtn>
         ) : (
           <EditBtn disabled={completed} onClick={() => editTodo(todo)}>
             edit

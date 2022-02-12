@@ -20,12 +20,7 @@ export const deleteTodoAction = (todo) => ({
   payload: todo,
 });
 
-// export const editTodoAction = (todo) => ({
-//   type: EDIT_TODO_ACTION,
-//   payload: { ...todo },
-// });
-
-export const editTodoAction = (id, updatedTitle) => ({
+export const editTodoAction = (todo) => ({
   type: EDIT_TODO_ACTION,
-  payload: { id, updatedTitle },
+  payload: { ...todo },
 });
