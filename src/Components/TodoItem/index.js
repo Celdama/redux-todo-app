@@ -25,16 +25,10 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
     setNewTitle(e.target.value);
   };
 
-  const saveNewTodo = (todo) => {
+  const saveNewTodoTitle = (todo) => {
     handleEditTodo({ ...todo, title: newTitle });
     setEditing(false);
   };
-
-  // const saveNewTodo = (todo, e) => {
-  //   e.preventDefault();
-  //   handleEditTodo(todo.id, newTitle);
-  //   setEditing(false);
-  // };
 
   const { completed, title } = todo;
 
@@ -48,7 +42,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
           onChange={() => onToggle(todo)}
         />
         {editing ? (
-          <form onSubmit={(e) => saveNewTodo(todo, e)}>
+          <form onSubmit={() => saveNewTodoTitle(todo)}>
             <EditTaskInput
               type='text'
               value={newTitle}
@@ -66,7 +60,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
       </ItemContainer>
       <ContainerBtnItem>
         {editing ? (
-          <SaveBtn onClick={() => saveNewTodo(todo)}>save</SaveBtn>
+          <SaveBtn onClick={() => saveNewTodoTitle(todo)}>save</SaveBtn>
         ) : (
           <EditBtn disabled={completed} onClick={() => editTodo(todo)}>
             edit

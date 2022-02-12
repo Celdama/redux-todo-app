@@ -5,20 +5,19 @@ import { filterSelector } from '../../Store/selectors/filterSelector';
 import { Button } from './todoFilter.tw';
 
 export const TodoFilter = ({ filter, handleSetFilter }) => {
-  console.log(filter);
   return (
-    <div>
+    <div className='pb-14'>
       <Button disabled={filter === null} onClick={() => handleSetFilter(null)}>
-        no filter
+        All
       </Button>
       <Button
         disabled={filter === false}
         onClick={() => handleSetFilter(false)}
       >
-        todo
+        Todo
       </Button>
       <Button disabled={filter === true} onClick={() => handleSetFilter(true)}>
-        done
+        Done
       </Button>
     </div>
   );

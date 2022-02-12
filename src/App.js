@@ -7,8 +7,8 @@ function App() {
   return (
     <Container>
       <TitleApp>Todo List with Redux</TitleApp>
-      <TodoListStore />
       <TodoFilterStore />
+      <TodoListStore />
       <GlobalStyle />
     </Container>
   );
