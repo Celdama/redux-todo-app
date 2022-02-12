@@ -14,7 +14,7 @@ export const TodoFilter = ({ filter, handleSetFilter }) => {
         disabled={filter === false}
         onClick={() => handleSetFilter(false)}
       >
-        Todo
+        To Do
       </Button>
       <Button disabled={filter === true} onClick={() => handleSetFilter(true)}>
         Done

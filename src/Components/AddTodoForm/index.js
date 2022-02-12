@@ -13,8 +13,8 @@ const AddTodoForm = ({ addTodo }) => {
 
   return (
     <Form onSubmit={handleAddTodo}>
-      <Input type='text' placeholder='task' ref={inputEl} />
-      <Button>
+      <Input type='text' placeholder='add task and press enter' ref={inputEl} />
+      {/* <Button>
         <svg
           width='20'
           height='20'
@@ -25,7 +25,7 @@ const AddTodoForm = ({ addTodo }) => {
           <path d='M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z' />
         </svg>
         Add
-      </Button>
+      </Button> */}
     </Form>
   );
 };

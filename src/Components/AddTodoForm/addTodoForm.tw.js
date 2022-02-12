@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 export const Form = tw.form`
   flex
   mt-16
-  justify-start
+  justify-center
   lg:w-10/12
   sm:mx-auto
   sm:px-8
@@ -13,6 +13,7 @@ export const Form = tw.form`
 export const Input = tw.input`
   rounded-md
   sm:text-sm
+  py-1
   pr-12
   w-8/12
   text-black
