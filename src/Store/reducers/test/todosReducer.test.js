@@ -1,3 +1,5 @@
+/* global test, expect */
+
 import '@testing-library/jest-dom';
 import {
   todosReducer,
@@ -64,7 +66,7 @@ test('should add new todo to state without empty space', () => {
 });
 
 test('should delete todo with id', () => {
-  const initialState = [
+  const state = [
     {
       id: '1234',
       title: 'task 1',
@@ -82,7 +84,7 @@ test('should delete todo with id', () => {
     },
   ];
   expect(
-    todosReducer(initialState, {
+    todosReducer(state, {
       type: DELETE_TODO_ACTION,
       payload: '234443',
     })
