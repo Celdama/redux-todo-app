@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 
-export const Button = tw.button`
+const Button = tw.button`
   bg-transparent
 hover:bg-white
   hover:text-blue-700
@@ -17,3 +17,5 @@ text-white
   transition
   ease-in-out
 `;
+
+export default Button;

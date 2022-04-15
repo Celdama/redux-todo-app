@@ -2,10 +2,7 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import TodoItem from '../TodoItem';
 import AddTodoForm from '../AddTodoForm';
-import {
-  todosSelector,
-  filteredTodosSelector,
-} from '../../Store/selectors/todosSelector';
+import { filteredTodosSelector } from '../../Store/selectors/todosSelector';
 import {
   addTodoAction,
   deleteTodoAction,

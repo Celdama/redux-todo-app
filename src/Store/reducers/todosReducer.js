@@ -26,7 +26,7 @@ export const EDIT_TODO_ACTION = 'EDIT_TODO_ACTION';
 export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO_ACTION:
-      return [...state, { id: nanoid(), completed: false, ...action.payload }];
+      return [...state, { ...action.payload }];
     case UPDATE_TODO_ACTION:
       return state.map((todo) => {
         if (todo.id === action.payload.id) {
@@ -35,7 +35,7 @@ export const todosReducer = (state = initialState, action) => {
         return todo;
       });
     case DELETE_TODO_ACTION:
-      return state.filter((todo) => todo.id !== action.payload.id);
+      return state.filter((todo) => todo.id !== action.payload);
 
     case EDIT_TODO_ACTION:
       return state.map((todo) => {

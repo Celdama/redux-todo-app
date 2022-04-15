@@ -11,6 +11,7 @@ import {
   SaveBtn,
   ContainerBtnItem,
 } from './todoItem.tw';
+
 const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -30,13 +31,13 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
     setEditing(false);
   };
 
-  const { completed, title } = todo;
+  const { completed, title, id } = todo;
 
   return (
     <TaskItem>
       <ItemContainer>
         <Checkbox
-          type='checkbox'
+          type="checkbox"
           checked={completed}
           disabled={editing}
           onChange={() => onToggle(todo)}
@@ -44,7 +45,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         {editing ? (
           <form onSubmit={() => saveNewTodoTitle(todo)}>
             <EditTaskInput
-              type='text'
+              type="text"
               value={newTitle}
               onChange={handleNewTodoTitle}
             />
@@ -52,7 +53,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         ) : (
           <LabelItemTitle
             className={completed ? 'line-through italic ' : ''}
-            htmlFor=''
+            htmlFor=""
           >
             {title}
           </LabelItemTitle>
@@ -66,7 +67,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
             edit
           </EditBtn>
         )}
-        <DeleteBtn onClick={() => handleDeleteTodo(todo)}>x</DeleteBtn>
+        <DeleteBtn onClick={() => handleDeleteTodo(id)}>x</DeleteBtn>
       </ContainerBtnItem>
     </TaskItem>
   );
