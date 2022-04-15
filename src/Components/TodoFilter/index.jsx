@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilterAction } from '../../Store/actions/filterAction';
+import setFilterAction from '../../Store/actions/filterAction';
 import { filterSelector } from '../../Store/selectors/filterSelector';
 import Button from './todoFilter.tw';
 
