@@ -23,6 +23,7 @@ export const UPDATE_TODO_ACTION = 'UPDATE_TODO_ACTION';
 export const DELETE_TODO_ACTION = 'DELETE_TODO_ACTION';
 export const EDIT_TODO_ACTION = 'EDIT_TODO_ACTION';
 
+// eslint-disable-next-line default-param-last
 export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO_ACTION:

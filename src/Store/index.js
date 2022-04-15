@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { todosReducer } from './reducers/todosReducer';
 import { filterReducer } from './reducers/filterReducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
 
 const store = createStore(
   combineReducers({
