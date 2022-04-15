@@ -26,8 +26,8 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
     setNewTitle(e.target.value);
   };
 
-  const saveNewTodoTitle = (todo) => {
-    handleEditTodo({ ...todo, title: newTitle });
+  const saveNewTodoTitle = (currentTodo) => {
+    handleEditTodo({ ...currentTodo, title: newTitle });
     setEditing(false);
   };
 
@@ -53,7 +53,7 @@ const TodoItem = ({ todo, onToggle, handleDeleteTodo, handleEditTodo }) => {
         ) : (
           <LabelItemTitle
             className={completed ? 'line-through italic ' : ''}
-            htmlFor=""
+            htmlFor="title"
           >
             {title}
           </LabelItemTitle>
